@@ -4,6 +4,7 @@ import './App.css';
 import firebase from 'firebase';
 import Header from './components/header';
 import PostFeed from './components/PostFeed';
+import AddPostModal from './components/AddPostModal';
 
 class App extends Component {
   constructor (props) {
@@ -18,6 +19,7 @@ class App extends Component {
     };
     firebase.initializeApp(config);
     this.state = {
+        // Firebase junk comes in here
         posts: [
           {          
             username: "bob",
@@ -35,6 +37,11 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
+        <AddPostModal 
+          isOpen={this.state.showModal}
+          contentLabel="Minimal Modal Example"
+        >
+        </AddPostModal>
         <PostFeed posts={this.state.posts} />
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.

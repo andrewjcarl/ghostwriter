@@ -2,12 +2,16 @@ import React, { Component } from 'react';
 import logo from '../../assets/logo.png';
 import './style.css';
 import Button from '../button';
+import AddPostModal from '../AddPostModal';
 
 class Header extends Component {
     constructor(props) {
         super(props);
-        this.click = this.click.bind(this);
         this.logOut = this.props.logOut.bind(this);
+
+        this.state = {
+            showModal: false
+        }
     }
 
     click = () => { console.log('clicked'); };
@@ -20,10 +24,9 @@ class Header extends Component {
                 </div>
                 { this.props.isAuthenticated() ? (
                     <div className="header-btn">   
-                        <Button 
-                            color="orange"
-                            message="Post"
-                            clickCallback={this.click}
+                        <AddPostModal 
+                            isOpen={this.state.showModal}
+                            db={this.props.firebase} 
                         />
                         <Button 
                             message="Log Out"

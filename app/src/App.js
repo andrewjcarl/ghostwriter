@@ -58,12 +58,9 @@ class App extends Component {
   logout = () => {
     this.props.auth.logout();
   }
-  
+
   render() {
     const { isAuthenticated } = this.props.auth; 
-    // const isAuthenticated = () => {
-    //   return true;
-    // }
 
     //  TODO
     //  need to integrate with auth0 api to get user details
@@ -77,13 +74,11 @@ class App extends Component {
         <Header 
           isAuthenticated={isAuthenticated} 
           logOut={this.logout}
+          db={firebase}
         />
         {
           isAuthenticated() && 
           <React.Fragment>
-            <AddPostModal 
-              isOpen={this.state.showModal}
-              db={firebase} />
              <PostFeed 
               posts={this.state.posts}
               db={firebase} />

@@ -24,3 +24,7 @@
 .logo {
     max-height: 100%;
 }
+
+.header-btn button:not(:first-child) {
+    margin-left: 10px;
+}

@@ -12,7 +12,6 @@ class Post extends Component {
     }
 
     render() {
-
         if (this.props.loading) {
             return (
                 <div>Loading...</div>
@@ -21,26 +20,32 @@ class Post extends Component {
 
         return (
             <div className="post-single">
-                <div>
-                    Imposter Name: {this.props.post.username}
-                </div>
-                <div>
-                    Message: {this.props.post.message}
-                </div>
-                <div>
+                <div className="vote">
                     <button
+                        className="vote-button"
                         onClick={ this.handleUpvote.bind(this, this.props.post) }
                         type="button"
                         >
                         ^
                     </button>
-                    <div>{this.props.post.votevalue}</div>
+                    <div className="vote-count">
+                        {this.props.post.votevalue}
+                    </div>
                     <button
+                        className="vote-button"
                     onClick={ this.handleDownvote.bind(this, this.props.post) }
                     type="button"
                     >
                     v
                     </button>
+                </div>
+                <div class="post-content">
+                    <div className="user">
+                        @{this.props.post.username}:
+                    </div>
+                    <div className="message">
+                        {this.props.post.message}
+                    </div>
                 </div>
             </div>
         );

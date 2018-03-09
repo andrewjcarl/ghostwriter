@@ -46,8 +46,10 @@ class AddPostModal extends Component {
     }
 
     handleClick() {
-        this.props.db.database().ref('/messages').push({
-            message: this.state.message
+        this.props.db.database().ref('/posts').push({
+            username: "TempUntilWeHaveUser",
+            message: this.state.message,
+            votevalue: 1
         });
     }
 

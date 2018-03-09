@@ -20,22 +20,21 @@ class App extends Component {
     firebase.initializeApp(config);
 
     this.state = {
-      // Firebase junk comes in here
-      posts: [
-        {         
-          id: 1, 
-          username: "bob",
-          message: "test",
-          votevalue: 0
-        },
-        {  
-          id: 2,        
-          username: "iguana",
-          message: "pajama",
-          votevalue: 5
-        }
-      ]
+      posts: []
     };
+  }
+
+  componentWillMount() {
+    let postsRef = firebase.database().ref('posts');
+    let _this = this;
+
+    postsRef.on('value', function(snapshot) {
+      console.log(snapshot.val());
+      var result = snapshot.val() == null ? [] : Object.values(snapshot.val());
+      _this.setState({
+        posts: result
+      });
+    });
   }
   
   render() {

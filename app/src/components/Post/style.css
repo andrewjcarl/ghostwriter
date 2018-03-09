@@ -44,13 +44,44 @@
     display: flex;
     flex: initial;
     flex-direction: column;
-    align-content: center;
     flex-wrap: wrap;
     margin-right: 10px;
+    justify-content: space-around;
 }
 
 .vote .vote-button,
 .vote .vote-count {
     flex: initial;
     text-align: center;
+}
+
+.downvote {  
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #868a8b;
+}
+
+.downvote:hover {
+    border-top-color: #acb1b3;;
+}
+
+.upvote {
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #868a8b;
+    display: block;
+    background: none;
+}
+
+.upvote:hover {
+    border-bottom-color: #acb1b3;;
+}
+
+.upvote:hover,
+.downvote:hover {
+    cursor: pointer;
 }

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import Button from '../button';
 import './style.css';
 
-const LogIn = () => (
+const LogIn = ({ login }) => (
     <div className="card">
         <div>
         You are not logged in
@@ -12,9 +13,13 @@ const LogIn = () => (
         <Button
             color="orange"
             message="Log In"
-            clickCallback={this.login}
+            clickCallback={login}
         />
     </div>
 );
+
+LogIn.propTypes = {
+    login: PropTypes.func.isRequired,
+}
 
 export default LogIn;

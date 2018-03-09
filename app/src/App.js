@@ -32,8 +32,19 @@ class App extends Component {
     let _this = this;
 
     postsRef.on('value', function(snapshot) {
-      console.log(snapshot.val());
-      var result = snapshot.val() == null ? [] : Object.values(snapshot.val());
+      
+      // Build array this way so we can pass firebase object key also
+      let items = [];
+      snapshot.forEach((child) => {
+        items.push({
+          username: child.val().username,
+          message: child.val().message,
+          votevalue: child.val().votevalue,
+          _key:child.key
+        });
+      });
+      
+      var result = snapshot.val() == null ? [] : items;
       _this.setState({
         posts: result
       });
@@ -73,12 +84,16 @@ class App extends Component {
             <AddPostModal 
               isOpen={this.state.showModal}
               db={firebase} />
-            <PostFeed posts={this.state.posts} />
+             <PostFeed 
+              posts={this.state.posts}
+              db={firebase} />
           </React.Fragment>
         }
         {
           !isAuthenticated() && (
-            <LogIn />
+            <LogIn 
+              login={this.login}
+            />
           )
         }
       </div>

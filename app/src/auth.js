@@ -9,7 +9,7 @@ export default class Auth {
     redirectUri: process.env.NODE_ENV === 'development' ? 'http://localhost:3000/callback' : 'https://ghostwriter-197523.appspot.com/callback',
     audience: 'https://ghostwriter.auth0.com/userinfo',
     responseType: 'token id_token',
-    scope: 'openid'
+    scope: 'openid profile'
   });
 
   login = () => {
@@ -57,4 +57,6 @@ export default class Auth {
     let expiresAt = JSON.parse(localStorage.getItem('expires_at'));
     return new Date().getTime() < expiresAt;
   }
+
+
 }

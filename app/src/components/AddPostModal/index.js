@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Modal from 'react-modal';
 import './style.css';
+import Profile from '../../utils/getProfile';
 
 import Button from '../button';
 
@@ -15,10 +16,13 @@ const customStyles = {
   }
 };
 
-
 class AddPostModal extends Component {
     constructor(props) {
         super(props);
+
+        let profile = new Profile().getProfile();
+
+        console.log('modal profile', profile);
 
         this.state = {
             modalIsOpen: false,
@@ -30,6 +34,7 @@ class AddPostModal extends Component {
         this.closeModal = this.closeModal.bind(this);
         this.handleChange = this.handleChange.bind(this)
         this.handleClick = this.handleClick.bind(this);
+        
     }
 
     openModal() {
@@ -47,12 +52,17 @@ class AddPostModal extends Component {
         this.setState({message: e.target.value});
     }
 
-    handleClick() {
+    handleClick(e) {
+        e.preventDefault(); // don't submit form
         this.props.db.database().ref('/posts').push({
             username: "TempUntilWeHaveUser",
             message: this.state.message,
             upvotes: 1,
             downvotes: 0
+        }, (err) => {
+            if (!err) {
+                this.closeModal();
+            }
         });
     }
 
@@ -71,11 +81,15 @@ class AddPostModal extends Component {
                     onRequestClose={this.closeModal}
                     style={customStyles}
                 >
+                <a className="close-thick" onClick={this.closeModal}></a>
                 <h2 ref={subtitle => this.subtitle = subtitle}>Post your friend's quote</h2>
-                <button onClick={this.closeModal}>X</button>
-                <form>
-                    <input onChange={this.handleChange} />
-                    <button type="button" onClick={this.handleClick}>Submit</button>
+                <form className="post-form">
+                    <textarea onChange={this.handleChange} />
+                    <Button 
+                        color="orange"
+                        message="Submit"
+                        clickCallback={this.handleClick} 
+                    />
                 </form>
                 </Modal>
             </React.Fragment>

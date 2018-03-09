@@ -41,7 +41,7 @@ class Post extends Component {
                         v
                     </button>
                 </div>
-                <div class="post-content">
+                <div className="post-content">
                     <div className="user">
                         @{this.props.post.username}:
                     </div>

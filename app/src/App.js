@@ -30,8 +30,9 @@ class App extends Component {
 
     postsRef.on('value', function(snapshot) {
       console.log(snapshot.val());
+      var result = snapshot.val() == null ? [] : Object.values(snapshot.val());
       _this.setState({
-        posts: Object.values(snapshot.val())
+        posts: result
       });
     });
   }

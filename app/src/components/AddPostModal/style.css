@@ -1,6 +1,36 @@
-.App-header {
-    background-color: #222;
-    height: 150px;
-    padding: 20px;
-    color: white;
+.post-form textarea {
+    border-radius: 2px;
+    background: white;
+    width: 100%;
+    outline: none;
+    border: 1px solid #dedede;
+    padding: 5px;
+    font-size: 16px;
+}
+
+/* Close Button */
+[class*='close-'] {
+    color: #777;
+    font: 24px/100% arial, sans-serif;
+    position: absolute;
+    right: 5px;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #fff;
+    top: 5px;
+}
+  
+[class*='close-']:hover {
+    cursor: pointer;
+}
+
+.close-classic:after {
+    content: 'X'; /* ANSI X letter */
+}
+
+.close-thin:after {
+    content: '×'; /* UTF-8 symbol */
+}
+
+.close-thick:after {
+    content: '✖'; /* UTF-8 symbol */
 }

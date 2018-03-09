@@ -26,7 +26,7 @@ class Header extends Component {
                     <div className="header-btn">   
                         <AddPostModal 
                             isOpen={this.state.showModal}
-                            db={this.props.firebase} 
+                            db={this.props.db} 
                         />
                         <Button 
                             message="Log Out"

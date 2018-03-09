@@ -33,7 +33,7 @@ class Post extends Component {
                         onClick={ this.handleDownvote.bind(this, this.props.post) }
                     ></div>
                 </div>
-                <div class="post-content">
+                <div className="post-content">
                     <div className="user">
                         @{this.props.post.username}:
                     </div>

@@ -5,7 +5,7 @@ import Header from './components/header';
 import PostFeed from './components/PostFeed';
 import AddPostModal from './components/AddPostModal';
 import LogIn from './components/logIn';
-import getProfile from './utils/getProfile';
+import Profile from './utils/getProfile';
 
 const config = {
   apiKey: "AIzaSyC3Y8-stnJGcGOnCV79MG2A7lhpjfofaes",
@@ -49,6 +49,17 @@ class App extends Component {
         posts: result
       });
     });
+
+    let profile = new Profile();
+
+    const { isAuthenticated } = this.props.auth; 
+    //  TODO
+    //  need to integrate with auth0 api to get user details
+    //  and pass to firebase on load
+    if (isAuthenticated()) {
+      console.log(profile.getProfile());
+    }
+
   }
 
   login = () => {
@@ -61,13 +72,6 @@ class App extends Component {
 
   render() {
     const { isAuthenticated } = this.props.auth; 
-
-    //  TODO
-    //  need to integrate with auth0 api to get user details
-    //  and pass to firebase on load
-    if (isAuthenticated()) {
-      //console.log(getProfile());
-    }
 
     return (
       <div className="App">

@@ -46,7 +46,6 @@ class AddPostModal extends Component {
     }
 
     handleClick() {
-        console.log(this.props.db.database().ref('/messages'));
         this.props.db.database().ref('/messages').push({
             message: this.state.message
         });

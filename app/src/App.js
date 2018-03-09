@@ -6,7 +6,7 @@ import Header from './components/header';
 import PostFeed from './components/PostFeed';
 
 class App extends Component {
-  constructor () {
+  constructor (props) {
     super(props)
     var config = {
       apiKey: "AIzaSyBAud0XGzC-z9gGwBj6PuKlyji0Tmq66hQ",

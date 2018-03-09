@@ -26,8 +26,6 @@ class Post extends Component {
                         onClick={ this.handleUpvote.bind(this, this.props.post) }
                         type="button"
                     >
-                        ^<br/>
-                        {"+ "+this.props.post.upvotes}
                     </div>
                     <div className="vote-count">
                         {this.props.post.upvotes-this.props.post.downvotes}
@@ -37,8 +35,6 @@ class Post extends Component {
                         onClick={ this.handleDownvote.bind(this, this.props.post) }
                         type="button"
                     >
-                        {"- "+this.props.post.downvotes}<br/>
-                        v
                     </div>
                 </div>
                 <div className="post-content">

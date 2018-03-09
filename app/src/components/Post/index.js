@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import './style.css';
 
 class Post extends Component {
+
     handleUpvote = (post) => {
-    // Update votevalue through firebase call here
+        this.props.db.database().ref("posts").child(this.props.post._key).child("votevalue").set(this.props.post.votevalue += 1);
     }
 
     handleDownvote = (post) => {
-    // Update votevalue through firebase call here
+        this.props.db.database().ref("posts").child(this.props.post._key).child("votevalue").set(this.props.post.votevalue -= 1);
     }
 
     render() {

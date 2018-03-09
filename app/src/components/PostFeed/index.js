@@ -4,6 +4,7 @@ import Post from '../Post';
 
 class PostFeed extends Component {
     render() {
+        var that = this;
         if (this.props.loading) {
             return (
                 <div>Loading...</div>
@@ -13,7 +14,7 @@ class PostFeed extends Component {
         return (
             <React.Fragment>
                 {this.props.posts.map(function(post){
-                    return <Post key={post.id} post={post} />;
+                    return <Post db={that.props.db} key={post._key} post={post} />;
                 })}
             </React.Fragment>
         );

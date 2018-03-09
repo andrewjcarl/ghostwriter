@@ -21,7 +21,7 @@ class Header extends Component {
                     <Button 
                         color="orange"
                         message="Post"
-                        click={this.click}
+                        clickCallback={this.click}
                     />
                 </div>
             </header>

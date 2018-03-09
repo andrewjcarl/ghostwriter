@@ -65,7 +65,7 @@ class AddPostModal extends Component {
                     style={customStyles}
                 >
 
-                <h2 ref={subtitle => this.subtitle = subtitle}>Post your poop here</h2>
+                <h2 ref={subtitle => this.subtitle = subtitle}>Post you friend's quote here</h2>
                 <button onClick={this.closeModal}>X</button>
                 <form>
                     <input onChange={this.handleChange} />

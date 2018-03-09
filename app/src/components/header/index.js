@@ -7,6 +7,7 @@ class Header extends Component {
     constructor(props) {
         super(props);
         this.click = this.click.bind(this);
+        this.logOut = this.props.logOut.bind(this);
     }
 
     click = () => { console.log('clicked'); };
@@ -17,13 +18,19 @@ class Header extends Component {
                 <div className="header-logo">
                     <img src={logo} className="logo"/>
                 </div>
-                <div className="header-btn">
-                    <Button 
-                        color="orange"
-                        message="Post"
-                        clickCallback={this.click}
-                    />
-                </div>
+                { this.props.isAuthenticated() ? (
+                    <div className="header-btn">   
+                        <Button 
+                            color="orange"
+                            message="Post"
+                            clickCallback={this.click}
+                        />
+                        <Button 
+                            message="Log Out"
+                            clickCallback={this.logOut}
+                        />
+                    </div> 
+                ) : null }
             </header>
         );
     }

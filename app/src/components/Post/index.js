@@ -19,7 +19,7 @@ class Post extends Component {
         }
 
         return (
-            <div className="Post">
+            <div className="post-single">
                 <div>
                     Imposter Name: {this.props.post.username}
                 </div>

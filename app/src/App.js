@@ -91,7 +91,9 @@ class App extends Component {
         }
         {
           !isAuthenticated() && (
-            <LogIn />
+            <LogIn 
+              login={this.login}
+            />
           )
         }
       </div>

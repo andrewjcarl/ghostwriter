@@ -14,7 +14,7 @@ class PostFeed extends Component {
         return (
             <ul>
             {this.props.posts.map(function(post){
-                return <Post post={post} />;
+                return <Post key={post.id} post={post} />;
             })}
             </ul>
         );

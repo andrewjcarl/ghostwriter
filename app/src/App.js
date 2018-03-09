@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 import firebase from 'firebase';
-import Header from './components/Header';
+import Header from './components/header';
 import PostFeed from './components/PostFeed';
 import AddPostModal from './components/AddPostModal';
 
 class App extends Component {
-  constructor () {
-    super();
-
+  constructor (props) {
+    super(props)
     var config = {
       apiKey: "AIzaSyBAud0XGzC-z9gGwBj6PuKlyji0Tmq66hQ",
       authDomain: "ghostwriterdb-ca2f1.firebaseapp.com",

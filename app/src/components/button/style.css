@@ -1,0 +1,22 @@
+button {
+    border-radius: 2px;
+    padding: 8px 12px;
+    background-color: #868a8b;
+    outline: none;
+    border: 0;
+    color: white;
+    text-shadow: 1px 1px rgba(0,0,0,.3);
+    font-size: 14px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button.orange {
+    background-color: #ed970b;
+}
+
+button.orange:hover {
+    background-color: #e2a94e;
+}

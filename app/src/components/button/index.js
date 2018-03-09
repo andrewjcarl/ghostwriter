@@ -5,7 +5,7 @@ import './style.css';
 const Button = ({ color, message, clickCallback }) => (
     <button 
         className={color}
-        onClick={clickCallback}
+        onClick={() => clickCallback(true)}
     >
         {message}
     </button>

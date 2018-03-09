@@ -17,9 +17,8 @@ const customStyles = {
 class AddPostModal extends Component {
     constructor(props) {
         super(props);
-
+        
         this.state = {
-            modalIsOpen: false,
             message: ''
         };
 
@@ -38,7 +37,7 @@ class AddPostModal extends Component {
     }
 
     closeModal() {
-        this.setState({modalIsOpen: false});
+        this.props.toggleAddPostModal(false);
     }
 
     handleChange(e) {
@@ -57,16 +56,15 @@ class AddPostModal extends Component {
         var that = this;
         return (
             <div>
-                <button onClick={this.openModal}>Open Modal</button>
                 <Modal
-                    isOpen={this.state.modalIsOpen}
+                    isOpen={this.props.modalIsOpen}
                     onAfterOpen={this.afterOpenModal}
                     onRequestClose={this.closeModal}
                     style={customStyles}
                 >
 
                 <h2 ref={subtitle => this.subtitle = subtitle}>Post your poop here</h2>
-                <button onClick={this.closeModal}>X</button>
+                <button onClick={() => this.props.toggleAddPostModal(false)}>X</button>
                 <form>
                     <input onChange={this.handleChange} />
                     <button type="button" onClick={this.handleClick}>Submit</button>

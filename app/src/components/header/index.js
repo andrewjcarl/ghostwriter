@@ -21,7 +21,7 @@ class Header extends Component {
                     <Button 
                         color="orange"
                         message="Post"
-                        clickCallback={this.click}
+                        clickCallback={this.props.toggleAddPostModal}
                     />
                 </div>
             </header>

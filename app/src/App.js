@@ -20,8 +20,11 @@ class App extends Component {
     firebase.initializeApp(config);
 
     this.state = {
-      posts: []
+      posts: [],
+      showModal: false
     };
+
+    this.toggleAddPostModal = this.toggleAddPostModal.bind(this);
   }
 
   componentWillMount() {
@@ -47,14 +50,21 @@ class App extends Component {
       });
     });
   }
+
+  toggleAddPostModal(value) {
+    this.setState({
+      showModal: value
+    });
+  }
   
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header toggleAddPostModal={this.toggleAddPostModal}/>
         <AddPostModal 
-          isOpen={this.state.showModal}
-          db={firebase} />
+          modalIsOpen={this.state.showModal}
+          db={firebase}
+          toggleAddPostModal={this.toggleAddPostModal} />
         <PostFeed 
           posts={this.state.posts}
           db={firebase} />

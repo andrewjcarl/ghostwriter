@@ -4,11 +4,11 @@ import './style.css';
 class Post extends Component {
 
     handleUpvote = (post) => {
-        this.props.db.database().ref("posts").child(this.props.post._key).child("votevalue").set(this.props.post.votevalue += 1);
+        this.props.db.database().ref("posts").child(this.props.post._key).child("upvotes").set(this.props.post.upvotes += 1);
     }
 
     handleDownvote = (post) => {
-        this.props.db.database().ref("posts").child(this.props.post._key).child("votevalue").set(this.props.post.votevalue -= 1);
+        this.props.db.database().ref("posts").child(this.props.post._key).child("downvotes").set(this.props.post.downvotes += 1);
     }
 
     render() {
@@ -28,8 +28,14 @@ class Post extends Component {
                         >
                         ^
                     </button>
+                    <div className="up-votes">
+                        {this.props.post.upvotes}
+                    </div>
+                    <div className="down-votes">
+                        {this.props.post.downvotes}
+                    </div>
                     <div className="vote-count">
-                        {this.props.post.votevalue}
+                        {this.props.post.upvotes-this.props.post.downvotes}
                     </div>
                     <button
                         className="vote-button"

@@ -51,7 +51,8 @@ class AddPostModal extends Component {
         this.props.db.database().ref('/posts').push({
             username: "TempUntilWeHaveUser",
             message: this.state.message,
-            votevalue: 1
+            upvotes: 1,
+            downvotes: 0
         });
     }
 

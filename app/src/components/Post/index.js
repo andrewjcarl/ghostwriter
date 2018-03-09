@@ -13,10 +13,10 @@ class Post extends Component {
         return (
             <div className="Post">
                 <div>
-                    {this.props.post.username}
+                    Imposter Name: {this.props.post.username}
                 </div>
                 <div>
-                    {this.props.post.message}
+                    Message: {this.props.post.message}
                 </div>
             </div>
         );

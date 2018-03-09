@@ -1,0 +1,7 @@
+.Post {
+    display: flex;
+    background-color:#2E4272;
+    color: white;
+    padding: 10px;
+    border-bottom-style: solid;
+}

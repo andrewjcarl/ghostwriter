@@ -1,0 +1,26 @@
+.header {
+    background-color: #2c3c3f;
+    height: 50px;
+    color: white;
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    border-bottom: 1px solid #1b2729;
+}
+
+.header-logo {
+    height: 100%;
+}
+
+.header-btn,
+.header-logo {
+    flex: initial;
+    padding: 0 10px;
+}
+
+.logo {
+    max-height: 100%;
+}

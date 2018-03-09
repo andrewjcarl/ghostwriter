@@ -3,10 +3,22 @@ import './style.css';
 
 class Post extends Component {
     render() {
+
+        if (this.props.loading) {
+            return (
+                <div>Loading...</div>
+            );
+        }
+
         return (
-            <header className="App-header">
-                <h1 className="App-title">Lol</h1>
-            </header>
+            <div className="Post">
+                <div>
+                    {this.props.post.username}
+                </div>
+                <div>
+                    {this.props.post.message}
+                </div>
+            </div>
         );
     }
 }

@@ -23,11 +23,13 @@ class App extends Component {
         posts: [
           {          
             username: "bob",
-            message: "test"
+            message: "test",
+            votevalue: 0
           },
           {          
             username: "iguana",
-            message: "pajama"
+            message: "pajama",
+            votevalue: 5
           }
         ]
     };

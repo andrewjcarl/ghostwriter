@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Modal from 'react-modal';
 import './style.css';
 
+import Button from '../button';
+
 const customStyles = {
   content : {
     top                   : '50%',
@@ -56,23 +58,26 @@ class AddPostModal extends Component {
     render() {
         var that = this;
         return (
-            <div>
-                <button onClick={this.openModal}>Open Modal</button>
+            <React.Fragment>      
+                <Button 
+                    color="orange"
+                    message="Post"
+                    clickCallback={this.openModal}
+                />
                 <Modal
                     isOpen={this.state.modalIsOpen}
                     onAfterOpen={this.afterOpenModal}
                     onRequestClose={this.closeModal}
                     style={customStyles}
                 >
-
-                <h2 ref={subtitle => this.subtitle = subtitle}>Post your poop here</h2>
-                <button onClick={this.closeModal}>X</button>
-                <form>
-                    <input onChange={this.handleChange} />
-                    <button type="button" onClick={this.handleClick}>Submit</button>
-                </form>
+                    <h2 ref={subtitle => this.subtitle = subtitle}>Post your poop here</h2>
+                    <button onClick={this.closeModal}>X</button>
+                    <form>
+                        <input onChange={this.handleChange} />
+                        <button type="button" onClick={this.handleClick}>Submit</button>
+                    </form>
                 </Modal>
-            </div>
+            </React.Fragment>
         );
     }
 }

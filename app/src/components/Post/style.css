@@ -1,8 +1,56 @@
 .post-single {
-    background-color: #222;
-    height: 150px;
-    padding: 20px;
-    color: white;
+    /* background-color: #2c3c3f;
+    color: #dedede;
+    box-shadow: 1px 1px 2px rgba(0,0,0,.15); */
+
+    max-width: 980px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.post-content {
+    flex: 1;
+    border: 2px dashed #a7adc1;
+    border-radius: 2px;
+    background: #d6dbf2;
+    color: #2c3c3f;
     padding: 10px;
-    border-bottom-style: solid;
+    
+}
+
+.post-single:not(:first-child) {
+    margin-top: 25px;
+}
+
+.user {
+    /* border: 2px dashed #a7adc1;
+    border-radius: 2px;
+    background: #d6dbf2;
+    color: #2c3c3f; */
+    display: inline-block;
+    font-weight: bold;
+}
+
+.message {
+    padding: 10px 0;
+    font-size: 18px;
+}
+
+.vote-button {
+
+}
+
+.vote {
+    display: flex;
+    flex: initial;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    margin-right: 10px;
+}
+
+.vote .vote-button,
+.vote .vote-count {
+    flex: initial;
+    text-align: center;
 }

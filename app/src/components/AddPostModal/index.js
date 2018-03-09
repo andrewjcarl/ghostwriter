@@ -70,12 +70,12 @@ class AddPostModal extends Component {
                     onRequestClose={this.closeModal}
                     style={customStyles}
                 >
-                    <h2 ref={subtitle => this.subtitle = subtitle}>Post your poop here</h2>
-                    <button onClick={this.closeModal}>X</button>
-                    <form>
-                        <input onChange={this.handleChange} />
-                        <button type="button" onClick={this.handleClick}>Submit</button>
-                    </form>
+                <h2 ref={subtitle => this.subtitle = subtitle}>Post your friend's quote</h2>
+                <button onClick={this.closeModal}>X</button>
+                <form>
+                    <input onChange={this.handleChange} />
+                    <button type="button" onClick={this.handleClick}>Submit</button>
+                </form>
                 </Modal>
             </React.Fragment>
         );

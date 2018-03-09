@@ -10,12 +10,12 @@ class App extends Component {
     super(props)
 
     var config = {
-      apiKey: "AIzaSyBAud0XGzC-z9gGwBj6PuKlyji0Tmq66hQ",
-      authDomain: "ghostwriterdb-ca2f1.firebaseapp.com",
-      databaseURL: "https://ghostwriterdb-ca2f1.firebaseio.com",
-      projectId: "ghostwriterdb-ca2f1",
-      storageBucket: "ghostwriterdb-ca2f1.appspot.com",
-      messagingSenderId: "471768156194"
+      apiKey: "AIzaSyC3Y8-stnJGcGOnCV79MG2A7lhpjfofaes",
+      authDomain: "ghostwriter-197523.firebaseapp.com",
+      databaseURL: "https://ghostwriter-197523.firebaseio.com",
+      projectId: "ghostwriter-197523",
+      storageBucket: "ghostwriter-197523.appspot.com",
+      messagingSenderId: "888773227754"
     };
     firebase.initializeApp(config);
 

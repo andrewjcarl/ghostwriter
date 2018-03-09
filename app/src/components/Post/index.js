@@ -22,7 +22,7 @@ class Post extends Component {
             <div className="post-single">
                 <div className="vote">
                     <button
-                        className="vote-button"
+                        className="vote-button upvote"
                         onClick={ this.handleUpvote.bind(this, this.props.post) }
                         type="button"
                         >

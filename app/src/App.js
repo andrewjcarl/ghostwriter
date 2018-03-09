@@ -39,7 +39,8 @@ class App extends Component {
         items.push({
           username: child.val().username,
           message: child.val().message,
-          votevalue: child.val().votevalue,
+          upvotes: child.val().upvotes,
+          downvotes: child.val().downvotes,
           _key:child.key
         });
       });
